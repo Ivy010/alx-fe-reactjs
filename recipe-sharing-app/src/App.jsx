@@ -1,6 +1,8 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
+import RecipeDetails from './components/RecipeDetails';
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -10,7 +12,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <Router>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -32,10 +34,12 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <h1>Recipe Sharing App</h1>
-      <AddRecipeForm />
-      <RecipeList />
-    </>
-  )
+      <Routes>
+        <Route path="/" element={<><AddRecipeForm /><RecipeList /></>} />
+        <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
