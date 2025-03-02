@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeDetails from './components/RecipeDetails';
+import SearchBar from './components/SearchBar';
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -34,6 +35,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <h1>Recipe Sharing App</h1>
+      <SearchBar />
       <Routes>
         <Route path="/" element={<><AddRecipeForm /><RecipeList /></>} />
         <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
