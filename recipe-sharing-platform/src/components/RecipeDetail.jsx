@@ -25,9 +25,9 @@ const RecipeDetail = () => {
       <img
         src={recipe.image}
         alt={recipe.title}
-        className="w-full h-64 object-cover rounded-md mb-6"
+        className="w-full h-64 object-cover rounded-md mb-6 shadow-lg"
       />
-      <div className="mb-6">
+      <div className="bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold mb-2">Ingredients:</h2>
         <ul className="list-disc ml-6">
           {recipe.ingredients.map((ingredient, index) => (
