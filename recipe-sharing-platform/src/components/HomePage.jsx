@@ -13,7 +13,7 @@ const HomePage = () => {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6">Recipe Sharing Platform</h1>
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-3">
         {recipes.map((recipe) => (
           <div key={recipe.id} className="card shadow-lg p-4 rounded-lg hover:scale-105 transition-transform">
             <img src={recipe.image} alt={recipe.title} className="w-full h-40 object-cover rounded-md mb-4" />
