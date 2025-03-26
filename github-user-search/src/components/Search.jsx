@@ -39,11 +39,11 @@ return (
 
 );
     {loading && <p>Loading...</p>}
-    {error && <p>{error}</p>}
+    {error && <p>"Looks like we can't find the user"</p>}
     {userData && (
      <div>
          <img src={userData.avatar_url} alt={`${userData.login}'s avatar`} width="100" />
-             <p>Name: {userData.name || 'Name not available'}</p>
+             <p>Name: {userData.name || "Looks like we can't find the user"}</p>
          <a href={userData.html_url} target="_blank" rel="noopener noreferrer">
              Visit Profile
          </a>
