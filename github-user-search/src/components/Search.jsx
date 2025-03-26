@@ -8,6 +8,10 @@ const Search = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    }
+    
     const handleSearch = async () => {
         setLoading(true);
         setError('');
