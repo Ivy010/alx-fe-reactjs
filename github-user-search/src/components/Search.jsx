@@ -8,11 +8,10 @@ const Search = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-    }
-    
-    const handleSearch = async () => {
+  
+
+    const handleSearch = async (e) => {
+        e.preventDefault();
         setLoading(true);
         setError('');
         try {
@@ -26,28 +25,31 @@ const Search = () => {
 
 
 return (
-    <form>
+    <form onSubmit ={handleSearch}>
        <label for= "username">Username</label>
        <input 
        type = "text" 
        value= {username} 
        onChange ={(e) => setUsername(e.target.value)}
        />
-       <button onClick={handleSearch}>Search</button>
+       <button type="submit">Search</button>
 
-       {loading && <p>Loading...</p>}
-       {error && <p>{error}</p>}
-       {userData && (
-        <div>
-            <img src={userData.avatar_url} alt={`${userData.login}'s avatar`} width="100" />
-            <p>Name: {userData.name || 'Name not available'}</p>
-            <a href={userData.html_url} target="_blank" rel="noopener noreferrer">
-                Visit Profile
-            </a>
-        </div>
-       )}
+    
     </form>
-    )
+
+);
+    {loading && <p>Loading...</p>}
+    {error && <p>{error}</p>}
+    {userData && (
+     <div>
+         <img src={userData.avatar_url} alt={`${userData.login}'s avatar`} width="100" />
+             <p>Name: {userData.name || 'Name not available'}</p>
+         <a href={userData.html_url} target="_blank" rel="noopener noreferrer">
+             Visit Profile
+         </a>
+     </div>
+    )}
+
 }
 
 export default Search;
