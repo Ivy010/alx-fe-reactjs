@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css'
+import githubServices from './services/githubServices'
+import Search from './components/Search'
+
 
 function App() {
 
@@ -12,4 +15,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
